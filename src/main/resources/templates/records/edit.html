@@ -1,0 +1,19 @@
+<html layout:decorator="layout">
+<div layout:fragment="content">
+    <form method="post" name="comment_form" id="comment_form" action="/records/update" role="form">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <textarea rows="2" class="form-control" id="name" name="name" th:text="${record.name}"/>
+            <label for="surname">Surname</label>
+            <textarea rows="2" class="form-control" id="surname" name="surname" th:text="${record.surname}"/>
+            <label for="phoneNumber">Phone Number</label>
+            <textarea rows="2" class="form-control" id="phoneNumber" name="phoneNumber"
+                      th:text="${record.phoneNumber}"/>
+            <label for="email">Email</label>
+            <textarea rows="2" class="form-control" id="email" name="email" th:text="${record.email}"/>
+        </div>
+        <input type="hidden" id="record_id" rows="5" class="form-control" name="record_id" th:value="${record.id}"/>
+        <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</html>

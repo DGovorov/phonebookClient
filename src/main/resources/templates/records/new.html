@@ -1,0 +1,17 @@
+<html layout:decorator="layout">
+<div layout:fragment="content">
+    <form method="post" name="comment_form" id="comment_form" action="/records/create" role="form">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <textarea rows="2" class="form-control" id="name" name="name"/>
+            <label for="surname">Surname</label>
+            <textarea rows="2" class="form-control" id="surname" name="surname"/>
+            <label for="phoneNumber">Phone Number</label>
+            <textarea rows="2" class="form-control" id="phoneNumber" name="phoneNumber"/>
+            <label for="email">Email</label>
+            <textarea rows="2" class="form-control" id="email" name="email"/>
+        </div>
+        <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</html>

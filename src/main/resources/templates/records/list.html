@@ -1,0 +1,46 @@
+<html layout:decorator="layout">
+
+<div layout:fragment="content">
+
+    <a class="btn btn-primary" href="/records/new">Add new record</a>
+
+    <table class="table table-striped" id="records_list">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr data-th-each="record : ${records}">
+            <td class="name" data-th-text="${record.name}"></td>
+
+            <td class="name" data-th-text="${record.surname}"></td>
+
+            <td class="name" data-th-text="${record.phoneNumber}"></td>
+
+            <td class="name" data-th-text="${record.email}"></td>
+
+            <td>
+                <a th:href="@{'/records/{id}/delete'(id=${record.id})}" class="delete" th:attr="name=${record.name}">
+                        <span class="fa-stack">
+                            <i class="glyphicon glyphicon-trash"></i>
+                        </span>
+                </a>
+            </td>
+
+            <td>
+                <a th:href="@{'/records/{id}/edit'(id=${record.id})}" class="edit" th:attr="name=${record.name}">
+                    <span class="fa-stack">
+                        <i class="glyphicon glyphicon-edit"></i>
+                    </span>
+
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</html>
